@@ -1,0 +1,1 @@
+mkdir -p $1 && find . -type f -name "page-*.jpg" | while read f; do dir=$(dirname "$f"); uuid=$(basename "$dir"); mv "$f" "$1/${uuid}-$(basename "$f")"; done && echo "Готово! Файлов: $(ls $1 | wc -l)"
